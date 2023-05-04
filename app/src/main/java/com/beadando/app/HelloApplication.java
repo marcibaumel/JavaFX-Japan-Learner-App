@@ -1,4 +1,4 @@
-package com.example.app;
+package com.beadando.app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

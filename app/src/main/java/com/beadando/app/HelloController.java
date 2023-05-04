@@ -1,4 +1,4 @@
-package com.example.app;
+package com.beadando.app;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

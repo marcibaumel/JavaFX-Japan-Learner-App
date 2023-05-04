@@ -8,8 +8,8 @@ module com.example.app {
             requires net.synedra.validatorfx;
             requires org.kordamp.ikonli.javafx;
             requires org.kordamp.bootstrapfx.core;
-            requires eu.hansolo.tilesfx;
+
         
-    opens com.example.app to javafx.fxml;
-    exports com.example.app;
+    opens com.beadando.app to javafx.fxml;
+    exports com.beadando.app;
 }
