@@ -13,5 +13,7 @@ module com.beadando.app {
     opens com.beadando.app to javafx.fxml;
     exports com.beadando.app;
     exports com.beadando.app.Controllers;
+    exports com.beadando.app.Models;
+    opens com.beadando.app.Models;
     opens com.beadando.app.Controllers to javafx.fxml;
 }

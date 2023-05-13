@@ -13,17 +13,12 @@ import javafx.stage.Stage;
 
 public class WelcomeController {
     @FXML
-    private Label welcomeText;
-
-    @FXML
     private void onPlayButtonClick() {
         System.out.println("Play");
     }
-
     @FXML
     protected void onEditButtonClick(ActionEvent event) {
         try {
-
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Edit.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -37,5 +32,4 @@ public class WelcomeController {
     protected void onCloseButtonClick(ActionEvent event) {
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
     }
-
 }

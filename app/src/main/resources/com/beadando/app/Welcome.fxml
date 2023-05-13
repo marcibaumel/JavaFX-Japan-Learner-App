@@ -7,12 +7,12 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="177.0" prefWidth="360.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beadando.app.Controllers.WelcomeController">
+<VBox alignment="CENTER" prefHeight="300.0" prefWidth="360.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beadando.app.Controllers.WelcomeController">
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
 
-  <Label fx:id="welcomeText" text="Java Quiz App">
+  <Label text="Java Quiz App">
       <font>
          <Font name="Bodoni MT" size="27.0" />
       </font></Label>

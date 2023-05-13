@@ -1,5 +1,7 @@
 package com.beadando.app.Models;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 public class DictionaryElement {
     private int id;
@@ -48,11 +50,19 @@ public class DictionaryElement {
         this.lastEditDate = lastEditDate;
     }
 
-    public DictionaryElement(int id, String word, String meaning, String sentence, Date lastEditDate) {
+    public DictionaryElement(int id, String word, String meaning, String sentence, String lastEditDate) {
         this.id = id;
         this.word = word;
         this.meaning = meaning;
         this.sentence = sentence;
-        this.lastEditDate = lastEditDate;
+
+    }
+
+    @Override
+    public String toString() {
+        return  word + '\t' + meaning ;
+    }
+
+    public DictionaryElement() {
     }
 }
