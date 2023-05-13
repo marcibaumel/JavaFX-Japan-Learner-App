@@ -15,14 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UOW {
-    /*
-    private List<DictionaryElement> dictionaryElementList;
-
-    public UOW(){
-        this.dictionaryElementList = dictionaryReader();
-    }
-    */
-    
     public List<DictionaryElement> dictionaryReader(){
         try {
             Gson gson = new Gson();

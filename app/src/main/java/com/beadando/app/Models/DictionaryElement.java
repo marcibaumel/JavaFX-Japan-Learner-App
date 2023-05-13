@@ -3,19 +3,30 @@ package com.beadando.app.Models;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
+
 public class DictionaryElement {
-    private int id;
+    private UUID id;
+    private int difficulty;
     private String word;
     private String meaning;
     private String sentence;
     private Date lastEditDate;
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
     }
 
     public String getWord() {
@@ -50,12 +61,13 @@ public class DictionaryElement {
         this.lastEditDate = lastEditDate;
     }
 
-    public DictionaryElement(int id, String word, String meaning, String sentence, String lastEditDate) {
-        this.id = id;
+    public DictionaryElement(String word, String meaning, String sentence, int difficulty) {
+        this.id = UUID.randomUUID();
+        this.difficulty = difficulty;
         this.word = word;
         this.meaning = meaning;
         this.sentence = sentence;
-
+        this.lastEditDate = new Date();
     }
 
     @Override

@@ -51,6 +51,7 @@
                  </effect>
              </Button>
             <ListView fx:id="dictionaryElementsListView" layoutX="85.0" layoutY="-4.0" prefHeight="260.0" prefWidth="232.0" />
+            <Button fx:id="backButton" layoutX="6.0" layoutY="231.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
          </children>
       </AnchorPane>
    </children>

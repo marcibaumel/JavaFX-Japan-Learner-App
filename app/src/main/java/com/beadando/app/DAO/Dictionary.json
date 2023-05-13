@@ -1,13 +1,15 @@
 [
   {
-    "id":0,
+    "id":"f8c3de3d-1fea-4d7c-a8b0-29f63c4c3454",
+    "difficulty": 1,
     "word": "あ",
     "meaning": "a",
     "sentence": "あれ (az)",
     "edited": "2023-05-13"
   },
   {
-    "id":1,
+    "id":"f8c3de3d-1fea-4d7c-a8b0-29f63c4c3455",
+    "difficulty": 1,
     "word": "い",
     "meaning": "i",
     "sentence": "いえ (lakás)",
