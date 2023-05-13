@@ -1,4 +1,4 @@
-module com.example.app {
+module com.beadando.app {
     requires javafx.controls;
     requires javafx.fxml;
         requires javafx.web;
@@ -8,8 +8,10 @@ module com.example.app {
             requires net.synedra.validatorfx;
             requires org.kordamp.ikonli.javafx;
             requires org.kordamp.bootstrapfx.core;
-
+            requires com.google.gson;
         
     opens com.beadando.app to javafx.fxml;
     exports com.beadando.app;
+    exports com.beadando.app.Controllers;
+    opens com.beadando.app.Controllers to javafx.fxml;
 }
