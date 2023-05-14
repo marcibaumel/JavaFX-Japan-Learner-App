@@ -1,18 +1,1 @@
-[
-  {
-    "id":"f8c3de3d-1fea-4d7c-a8b0-29f63c4c3454",
-    "difficulty": 1,
-    "word": "あ",
-    "meaning": "a",
-    "sentence": "あれ (az)",
-    "edited": "2023-05-13"
-  },
-  {
-    "id":"f8c3de3d-1fea-4d7c-a8b0-29f63c4c3455",
-    "difficulty": 1,
-    "word": "い",
-    "meaning": "i",
-    "sentence": "いえ (lakás)",
-    "edited": "2023-05-13"
-  }
-]
+[{"id":"f8c3de3d-1fea-4d7c-a8b0-29f63c4c3454","difficulty":67,"word":"あ","meaning":"a","sentence":"あれ (az)","lastEditDate":"May 11, 2023, 9:04:00 AM"},{"id":"f8c3de3d-1fea-4d7c-a8b0-29f63c4c3455","difficulty":57,"word":"い","meaning":"i","sentence":"いもう (húg)","lastEditDate":"May 14, 2023, 9:04:57 AM"},{"id":"1b8292e3-a17a-4638-9a8d-c4e0fdd99bf8","difficulty":29,"word":"う","meaning":"u","sentence":"うた (dal)","lastEditDate":"May 14, 2023, 9:09:23 AM"}]

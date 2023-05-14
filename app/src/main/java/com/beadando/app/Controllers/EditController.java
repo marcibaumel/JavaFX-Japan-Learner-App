@@ -50,6 +50,7 @@ public class EditController implements Initializable {
             DictionaryElement selectedModel = dictionaryElementsListView.getItems().get(selectedItem);
             dictionaryElementsListView.getItems().remove(selectedItem);
             dictionaryElements.remove(selectedModel);
+            dictionaryService.deleteElement(selectedModel.getId());
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information");

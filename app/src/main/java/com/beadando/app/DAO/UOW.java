@@ -7,6 +7,9 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.io.Reader;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
@@ -30,7 +33,18 @@ public class UOW {
     }
 
     public void updateJson(List<DictionaryElement> updatedElements){
+        try {
+            Gson gson = new Gson();
+            Type listType = new TypeToken<ArrayList<DictionaryElement>>() {}.getType();
+            File jsonFile = new File("src/main/java/com/beadando/app/DAO/Dictionary.json");
+            OutputStream outputStream = new FileOutputStream(jsonFile);
+            outputStream.write(gson.toJson(updatedElements).getBytes());
+            outputStream.flush();
 
+        }catch (Exception ex){
+            ex.printStackTrace();
+
+        }
     }
 
 }
