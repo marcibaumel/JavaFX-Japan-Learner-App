@@ -17,10 +17,6 @@ public class DictionaryRepository implements IDictionaryRepository {
     }
 
     @Override
-    public List<DictionaryElement> generateQuizElements() {
-        return null;
-    }
-    @Override
     public void deleteElement(UUID id) {
         findAllElement();
         try {
@@ -56,7 +52,7 @@ public class DictionaryRepository implements IDictionaryRepository {
         System.out.println(addElement);
         if (!addElement.getMeaning().isEmpty() && !addElement.getWord().isEmpty()) {
             try {
-                elements.add(elements.size(),addElement);
+                elements.add(elements.size(), addElement);
                 uow.updateJson(elements);
             } catch (Exception ex) {
                 ex.printStackTrace();

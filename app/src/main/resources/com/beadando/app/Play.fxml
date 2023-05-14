@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="300.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beadando.app.Controllers.PlayController">
+   <children>
+      <AnchorPane prefHeight="289.0" prefWidth="360.0">
+         <children>
+            <Button fx:id="resultButton" layoutX="294.0" layoutY="250.0" mnemonicParsing="false" onAction="#resultButtonOnCLick" text="Result" />
+            <Label fx:id="wordOneLabel" layoutX="63.0" layoutY="54.0" prefHeight="25.0" prefWidth="71.0" text="Word One" />
+            <Label fx:id="wordTwoLabel" layoutX="63.0" layoutY="128.0" text="Word Two" />
+            <Label fx:id="wordThreeLabel" layoutX="67.0" layoutY="190.0" text="Word Three" />
+            <TextField fx:id="wordOneTextField" layoutX="145.0" layoutY="54.0" promptText="Write the word meaning" />
+            <TextField fx:id="wordTwoTextField" layoutX="145.0" layoutY="124.0" promptText="Write the word meaning" />
+            <TextField fx:id="wordThreeTextField" layoutX="145.0" layoutY="186.0" promptText="Write the word meaning" />
+            <Label fx:id="helperSentenceOneTextField" layoutX="145.0" layoutY="79.0" prefHeight="17.0" prefWidth="189.0" text="Helper Sentence One" />
+            <Label fx:id="helperSentenceTwoTextField" layoutX="145.0" layoutY="149.0" prefHeight="17.0" prefWidth="189.0" text="Helper Sentence Two" />
+            <Label fx:id="helperSentenceThreeTextField" layoutX="145.0" layoutY="211.0" prefHeight="17.0" prefWidth="189.0" text="Helper Sentence Three" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

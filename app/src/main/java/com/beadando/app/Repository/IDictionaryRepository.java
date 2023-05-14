@@ -7,7 +7,6 @@ import java.util.UUID;
 
 public interface IDictionaryRepository {
     List<DictionaryElement> findAllElement();
-    List<DictionaryElement> generateQuizElements();
     void deleteElement(UUID id);
     void updateElement(DictionaryElement updateElement);
     void addElement(DictionaryElement addElement);

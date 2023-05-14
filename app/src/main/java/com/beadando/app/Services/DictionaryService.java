@@ -14,6 +14,9 @@ public class DictionaryService implements IDictionaryService {
         return dictionaryRepository.findAllElement();
     }
 
+    /*
+    TODO: Give back 3 random DictionaryElement
+     */
     @Override
     public List<DictionaryElement> generateQuizElements() {
         return null;

@@ -13,23 +13,33 @@ import javafx.stage.Stage;
 
 public class WelcomeController {
     @FXML
-    private void onPlayButtonClick() {
-        System.out.println("Play");
+    private void onPlayButtonClick(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Play.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
     @FXML
     protected void onEditButtonClick(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Edit.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     @FXML
     protected void onCloseButtonClick(ActionEvent event) {
-        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+        ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
     }
 }

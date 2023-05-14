@@ -1,11 +1,11 @@
 [
   {
     "id": "f8c3de3d-1fea-4d7c-a8b0-29f63c4c3454",
-    "difficulty": 67,
+    "difficulty": 54,
     "word": "あ",
     "meaning": "a",
     "sentence": "あれ (az)",
-    "lastEditDate": "May 11, 2023, 9:04:00 AM"
+    "lastEditDate": "May 14, 2023, 12:08:54 PM"
   },
   {
     "id": "f8c3de3d-1fea-4d7c-a8b0-29f63c4c3455",
@@ -22,5 +22,13 @@
     "meaning": "u",
     "sentence": "うた (dal)",
     "lastEditDate": "May 14, 2023, 9:09:23 AM"
+  },
+  {
+    "id": "743cb530-ac03-493a-9b96-749503b27aea",
+    "difficulty": 100,
+    "word": "え",
+    "meaning": "e",
+    "sentence": "いえ(ház)",
+    "lastEditDate": "May 14, 2023, 2:38:01 PM"
   }
 ]
