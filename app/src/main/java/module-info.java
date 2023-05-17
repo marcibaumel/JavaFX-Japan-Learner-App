@@ -9,6 +9,7 @@ module com.beadando.app {
             requires org.kordamp.ikonli.javafx;
             requires org.kordamp.bootstrapfx.core;
             requires com.google.gson;
+            requires itextpdf;
         
     opens com.beadando.app to javafx.fxml;
     exports com.beadando.app;

@@ -1,6 +1,7 @@
 package com.beadando.app.Controllers;
 
 import com.beadando.app.Main;
+import com.beadando.app.Services.DocumentGeneratorService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.scene.control.ProgressIndicator;
 import javafx.stage.Stage;
 
 public class ResultController {
+    private final DocumentGeneratorService documentGeneratorService = new DocumentGeneratorService();
     @FXML
     private ProgressBar resultProgressBar;
     @FXML
@@ -21,6 +23,7 @@ public class ResultController {
     private Button generateButton;
     @FXML
     private Button doneButton;
+    private double finalResult;
 
     @FXML
     private void doneButtonOnCLick(ActionEvent event){
@@ -37,6 +40,12 @@ public class ResultController {
 
     @FXML
     private void generateButtonOnClick(ActionEvent event){
+        documentGeneratorService.generateDocument();
+    }
 
+    public void initData(int result){
+        finalResult = (double) result/100;
+        resultProgressBar.setProgress(finalResult);
+        resultProgressIndicator.setProgress(finalResult);
     }
 }
