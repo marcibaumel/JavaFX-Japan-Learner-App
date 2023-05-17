@@ -1,49 +1,32 @@
-name: GitHub Actions Maven Build Example
+name: Java CI with Maven
 
 on:
   push:
-    branches: [ master ]
-jobs:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
-  build-on-ubuntu:
-    # The type of runner that the job will run on
+jobs:
+  build:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Step 1 - Checkout main branch from GitHub 
-        uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Step 2 - Set up JDK 17
-        uses: actions/setup-java@v1
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          java-version: 17
-    
-      - name: Step 3 - Have GitHub Actions Build Maven Project
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package --file app/pom.xml
+      
+      - name: Build with maven
         run: |
           mvn -B package --file app/pom.xml
           mkdir staging && cp app/target/*.jar staging
-
-      - name: Step 4 - Set up a cache for Maven
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**app/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
-
-      - name: Step 5 - Persist workflow data as artificats
+      
+      - name: Publis artifacts   
         uses: actions/upload-artifact@v2
         with:
-          name: github-actions-artifact
+          name: beadando-artifact
           path: staging
-        
-          
-          
-          
-
-
-
-
-
