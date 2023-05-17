@@ -49,7 +49,7 @@ public class PlayController implements Initializable {
     private void resultButtonOnCLick(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Result.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
+            Parent root = fxmlLoader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             ResultController resultController = fxmlLoader.getController();
             resultController.initData(generateResult());
@@ -63,22 +63,13 @@ public class PlayController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         quizElements = dictionaryService.generateQuizElements();
+        wordOneLabel.setText(quizElements.get(0).getWord());
+        wordTwoLabel.setText(quizElements.get(1).getWord());
+        wordThreeLabel.setText(quizElements.get(2).getWord());
+        helperSentenceOneTextField.setText(quizElements.get(0).getSentence());
+        helperSentenceTwoTextField.setText(quizElements.get(1).getSentence());
+        helperSentenceThreeTextField.setText(quizElements.get(2).getSentence());
 
-        if (quizElements.size() == 0){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information");
-            alert.setHeaderText("No element in the Dictionary, please add element in the edit options");
-            alert.showAndWait();
-
-
-        }else {
-            wordOneLabel.setText(quizElements.get(0).getWord());
-            wordTwoLabel.setText(quizElements.get(1).getWord());
-            wordThreeLabel.setText(quizElements.get(2).getWord());
-            helperSentenceOneTextField.setText(quizElements.get(0).getSentence());
-            helperSentenceTwoTextField.setText(quizElements.get(1).getSentence());
-            helperSentenceThreeTextField.setText(quizElements.get(2).getSentence());
-        }
     }
 
     private int generateResult() {
@@ -96,7 +87,7 @@ public class PlayController implements Initializable {
                 result++;
             }
         }
-        float calculation = ((float)result/3) * 100;
-        return (int)calculation;
+        float calculation = ((float) result / 3) * 100;
+        return (int) calculation;
     }
 }
