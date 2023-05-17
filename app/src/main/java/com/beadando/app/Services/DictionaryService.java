@@ -22,11 +22,13 @@ public class DictionaryService implements IDictionaryService {
         int quizElementsSize = 3;
         List<DictionaryElement> dictionaryElements = dictionaryRepository.findAllElement();
         List<DictionaryElement> quizElements = new ArrayList<>();
-        if(dictionaryElements.size() > 0) {
-            for (int i = 0; i < quizElementsSize; i++) {
-                int randomNumber = rand.nextInt(dictionaryElements.size());
-                DictionaryElement randomElement = dictionaryElements.get(randomNumber);
-                quizElements.add(randomElement);
+        if(dictionaryElements != null) {
+            if (dictionaryElements.size() > 0) {
+                for (int i = 0; i < quizElementsSize; i++) {
+                    int randomNumber = rand.nextInt(dictionaryElements.size());
+                    DictionaryElement randomElement = dictionaryElements.get(randomNumber);
+                    quizElements.add(randomElement);
+                }
             }
         }
         return quizElements;

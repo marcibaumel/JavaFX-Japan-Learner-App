@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -62,12 +63,22 @@ public class PlayController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         quizElements = dictionaryService.generateQuizElements();
-        wordOneLabel.setText(quizElements.get(0).getWord());
-        wordTwoLabel.setText(quizElements.get(1).getWord());
-        wordThreeLabel.setText(quizElements.get(2).getWord());
-        helperSentenceOneTextField.setText(quizElements.get(0).getSentence());
-        helperSentenceTwoTextField.setText(quizElements.get(1).getSentence());
-        helperSentenceThreeTextField.setText(quizElements.get(2).getSentence());
+
+        if (quizElements.size() == 0){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setHeaderText("No element in the Dictionary, please add element in the edit options");
+            alert.showAndWait();
+
+
+        }else {
+            wordOneLabel.setText(quizElements.get(0).getWord());
+            wordTwoLabel.setText(quizElements.get(1).getWord());
+            wordThreeLabel.setText(quizElements.get(2).getWord());
+            helperSentenceOneTextField.setText(quizElements.get(0).getSentence());
+            helperSentenceTwoTextField.setText(quizElements.get(1).getSentence());
+            helperSentenceThreeTextField.setText(quizElements.get(2).getSentence());
+        }
     }
 
     private int generateResult() {
@@ -88,13 +99,4 @@ public class PlayController implements Initializable {
         float calculation = ((float)result/3) * 100;
         return (int)calculation;
     }
-
-
-    /*
-    TODO:
-    - Generate result
-    - Open result view
-    - Export pdf
-     */
-
 }
