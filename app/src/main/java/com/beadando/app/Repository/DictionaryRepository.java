@@ -3,12 +3,13 @@ package com.beadando.app.Repository;
 import com.beadando.app.DAO.UOW;
 import com.beadando.app.Models.DictionaryElement;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class DictionaryRepository implements IDictionaryRepository {
     private final UOW uow = new UOW();
-    private List<DictionaryElement> elements;
+    private List<DictionaryElement> elements = new ArrayList<>();
 
     @Override
     public List<DictionaryElement> findAllElement() {
@@ -49,10 +50,16 @@ public class DictionaryRepository implements IDictionaryRepository {
     @Override
     public void addElement(DictionaryElement addElement) {
         findAllElement();
+
+        if(elements == null){
+            elements = new ArrayList<>();
+        }
+
         System.out.println(addElement);
+
         if (!addElement.getMeaning().isEmpty() && !addElement.getWord().isEmpty()) {
             try {
-                elements.add(elements.size(), addElement);
+                elements.add(addElement);
                 uow.updateJson(elements);
             } catch (Exception ex) {
                 ex.printStackTrace();

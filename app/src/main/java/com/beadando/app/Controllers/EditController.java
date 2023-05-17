@@ -27,7 +27,9 @@ public class EditController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dictionaryElements = dictionaryService.findAllElement();
-        dictionaryElementsListView.getItems().addAll(dictionaryElements);
+        if(dictionaryElements != null) {
+            dictionaryElementsListView.getItems().addAll(dictionaryElements);
+        }
     }
 
     @FXML

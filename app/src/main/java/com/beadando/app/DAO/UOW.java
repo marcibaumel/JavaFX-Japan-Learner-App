@@ -22,7 +22,9 @@ public class UOW {
         try {
             Gson gson = new Gson();
             Type listType = new TypeToken<ArrayList<DictionaryElement>>() {}.getType();
-            Reader reader = Files.newBufferedReader(Paths.get("src/main/java/com/beadando/app/DAO/Dictionary.json"));
+            File jsonFile = new File("src/main/java/com/beadando/app/DAO/Dictionary.json");
+            jsonFile.createNewFile();
+            Reader reader = Files.newBufferedReader(Paths.get(jsonFile.getPath()));
             List<DictionaryElement> resultList = gson.fromJson(reader, listType);
             reader.close();
             return resultList;
