@@ -23,7 +23,7 @@ jobs:
       - name: Build with maven
         run: |
           mvn -B package --file app/pom.xml
-          mkdir staging && cp target/*.jar staging
+          mkdir staging && cp app/target/*.jar staging
       
       - name: Publis artifacts   
         uses: actions/upload-artifact@v2
