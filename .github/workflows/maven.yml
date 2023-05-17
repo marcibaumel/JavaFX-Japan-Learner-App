@@ -20,6 +20,11 @@ jobs:
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package --file app/pom.xml
       
+      - name: Build with maven
+        run: |
+          mvn -B package --file app/pom.xml
+          mkdir staging && cp target/*.jar staging
+      
       - name: Publis artifacts   
         uses: actions/upload-artifact@v2
         with:
