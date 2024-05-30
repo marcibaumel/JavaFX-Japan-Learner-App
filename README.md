@@ -1,0 +1,1 @@
+[![Java CI with Maven](https://github.com/marcibaumel/JavaFX-Japan-Learner-App/actions/workflows/maven.yml/badge.svg)](https://github.com/marcibaumel/JavaFX-Japan-Learner-App/actions/workflows/maven.yml)
